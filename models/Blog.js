@@ -2,23 +2,25 @@ const { Model, Datatypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
-class User extends Model {}
+class Blog extends Model {}
 
-User.init(
+Blog.init(
   {
     //define columns
     id: {},
-    name: {},
-    email: {},
-    password: {},
+    title: {},
+    description: {},
+    date_created: {},
+    user_id: {},
   },
   {
+    //what is this for?
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "blog",
   }
 );
 
-module.exports = User;
+module.exports = Blog;
