@@ -1,4 +1,4 @@
-//questions about all this pretty much haha
+//mom of the project-tells kid files where to go, how to do things, whenever use routes, use controllers, use handlebars, its in handlebars, make a req go through session, check if cookie is expired
 
 //import modules
 const path = require("path");
@@ -11,16 +11,29 @@ const helpers = require("./utils/helpers");
 //import sequelize
 const sequelize = require("./config/connection");
 
+//creates new sequelize store using express package
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 //express initialization
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //handlebars initialization
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 
 //session options
 const sess = {
+  //secret protects the session
   secret: "secret secret",
+  //cookie defines aspects of the session
+  cookie: {
+    maxAge: 60 * 60 * 1000, //this should equal an hour
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
 };
 
 //session initialization
