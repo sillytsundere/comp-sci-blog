@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-//user routes used to send and receive information
+//user routes used to send and receive information to the server
 
 // CREATE new user
 router.post('/signup', async (req, res) => {
