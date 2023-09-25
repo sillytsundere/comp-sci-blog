@@ -1,27 +1,27 @@
 [
   {
     "title": "Why MVC is so important: Don't get lost in the sea of files",
-    "description": "",
+    "description": "Developers use MVC to maintain a separation of concerns, this allows them to organize their code in a file system that makes it easier to naviagte. The Model layer is used for the data or information part of the code, the View layer is used for the design and UI part of the code and the Controller layer stores the logic and aids communication between the Model and the View.",
     "user_id": "1"
   },
   {
-    "title": "Authentication vs. Authentication",
-    "description": "",
+    "title": "Authentication vs. Authorization",
+    "description": "Authentication is when you confirm your identity, such as entering your correct email and password to log into a website. Authorization, on the other hand is the permission to access the system, such as how you can view certain parts of a web application only once you have logged in and are thus authorized. Both of these concepts help ensure security of information on web applications.",
     "user_id": "2"
   },
   {
     "title": "Where do all these routes go? Routers and how they work",
-    "description": "",
+    "description": "Stuff about Routers",
     "user_id": "4"
   },
   {
     "title": "Why I won't run a server for my web app on my personal computer",
-    "description": "",
+    "description": "While most personal computers today are powerful enough to run a web application that is not the only necessary feature. A server not only has power which allows it to 'serve' many requests(sometimes all at once) but it also will be accessible. Web applications are often run on third-party servers who focus on keeping powerful, secure computers running at all times to be able to run the server.",
     "user_id": "4"
   },
   {
-    "title": "",
-    "description": "",
+    "title": "ORM and SQL",
+    "description": "Understanding how SQL databases store information in tables is fairly simple, but through the concept of Object Relational Mapping these tables are viewed as objects and become easier to work with in your code. When we can view a database table as an Object and the columns as keys and the records as values of those keys then accesing that information with a non-SQL language in your code, such as JavaScript, becomes easier and faster and can even open your eyes to new ways of utilizing the data!",
     "user_id": "6"
   }
 ]

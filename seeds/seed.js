@@ -6,7 +6,8 @@ const blogData = require('./blog-data.json');
 const commentData = require('./comment-data.json');
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: true }); //what is this part for?
+    await sequelize.sync({ force: true }); //what is this part for? 
+    //this force: true overwrites any tables if they already exist, basically drop if exists
 
     await User.bulkCreate(userData, {
         individualHooks: true,
