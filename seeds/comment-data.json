@@ -1,47 +1,47 @@
 [
   {
-    "description": "I learned about this in my full-stack bootcamp! It really made it easier to navigate my repositories!",
+    "comment_text": "I learned about this in my full-stack bootcamp! It really made it easier to navigate my repositories!",
     "user_id": "2",
-    "blog_id": "1"
+    "post_id": "1"
   },
   {
-    "description": "While this is the beginnings, there is so much more to website and database security.",
+    "comment_text": "While this is the beginnings, there is so much more to website and database security.",
     "user_id": "4",
-    "blog_id": "2"
+    "post_id": "2"
   },
   {
-    "description": "Man, routers sure gave me trouble, but understanding CRUD and how the routes work with the server helps.",
+    "comment_text": "Man, routers sure gave me trouble, but understanding CRUD and how the routes work with the server helps.",
     "user_id": "5",
-    "blog_id": "3"
+    "post_id": "3"
   },
   {
-    "description": "First Comment :)",
+    "comment_text": "First Comment :)",
     "user_id": "5",
-    "blog_id": "4"
+    "post_id": "4"
   },
   {
-    "description": "I think one could own a computer that they keep on all the time but conceed that it is probably impractical for an individual.",
+    "comment_text": "I think one could own a computer that they keep on all the time but conceed that it is probably impractical for an individual.",
     "user_id": "3",
-    "blog_id": "4"
+    "post_id": "4"
   },
   {
-    "description": "If only this was all we needed :/",
+    "comment_text": "If only this was all we needed :/",
     "user_id": "5",
-    "blog_id": "2"
+    "post_id": "2"
   },
   {
-    "description": "SQL was giving me a lot of trouble until ORM showed me I could look at those tables like objects and everything clicked.",
+    "comment_text": "SQL was giving me a lot of trouble until ORM showed me I could look at those tables like objects and everything clicked.",
     "user_id": "1",
-    "blog_id": "5"
+    "post_id": "5"
   },
   {
-    "description": "I love to utilize this concept with Sequelize and then I dont have to switch between SQL commands and JavaScript.",
+    "comment_text": "I love to utilize this concept with Sequelize and then I dont have to switch between SQL commands and JavaScript.",
     "user_id": "4",
-    "blog_id": "5"
+    "post_id": "5"
   },
   {
-    "description": "I love this concept as it made a lot of other smaller concepts that make up MVC instantly click for me. Such as how routes fit in with the server and the front end.",
-    "user_id": "1",
-    "blog_id": "1"
+    "comment_text": "I love this concept as it made a lot of other smaller concepts that make up MVC instantly click for me. Such as how routes fit in with the server and the front end.",
+    "user_id": "3",
+    "post_id": "1"
   }
 ]

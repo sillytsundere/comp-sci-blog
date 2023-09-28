@@ -12,7 +12,7 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    description: {
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -28,7 +28,7 @@ Comment.init(
         key: 'id',
       }
     },
-    blog_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'blog',

@@ -9,7 +9,7 @@ const routes = require("./controllers");
 const helpers = require("./utils/helpers");
 
 //import sequelize
-const sequelize = require("./config/connection");
+const sequelize = require("./config/connection.js");
 
 //creates new sequelize store using express package
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
