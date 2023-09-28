@@ -1,0 +1,14 @@
+<p>THIS IS POST HANDLEBARS RENDERING LOOKING COOL WITHOUT THE SENT DATA</p>
+
+<section>
+    <header>{{post.title}}</header>
+    <p>{{post.content}}</p>
+    <p>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+</section>
+<section>
+    <header>Comments</header>
+    {{#each comments as |comment|}}
+    <p>{{comment.user.username}} on {{format_date comment.date_created}}</p>
+    <p>{{comment.comment_text}}</p>
+    {{/each}}
+</section>

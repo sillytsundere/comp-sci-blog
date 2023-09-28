@@ -1,1 +1,13 @@
 <p>THIS IS THE DASHBOARD HANDLEBARS PAGE BEING RENDERED</p>
+<h2>Your Posts</h2>
+{{#each posts as |post|}}
+        <section>
+            <button>Edit Post</button>
+            <header>
+                {{post.title}}
+            </header>
+            <p>{{post.content}}</p>
+            <p>Posted on {{format_date post.date_created}}</p>
+            <p><a href="/post/{{post.id}}">View Comments</a></p>
+        </section>
+    {{/each}}

@@ -1,1 +1,20 @@
 <p>THIS IS THE HOMEPAGE HANDLEBARS RENDERING ON THE MAIN HANDLEBARS</p>
+
+{{#if logged_in}}
+    {{#each posts as |post|}}
+        <section>
+            <header>
+                <a href="/post/{{post.id}}">{{post.title}}</a>
+            </header>
+            <p>{{post.content}}</p>
+            <p>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+        </section>
+    {{/each}}
+{{else}}
+<p>Please log in or sign up to see more post details!</p>
+    {{#each posts as |post|}}
+        <section>
+            <header>{{post.title}}</header>
+        </section>
+    {{/each}}
+{{/if}}

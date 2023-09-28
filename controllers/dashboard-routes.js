@@ -7,10 +7,18 @@ const { User, Post, Comment } = require("../models");
 
 //dashboard display
 //this will display the session user's blog posts
-router.get("/", withAuth, (req, res) => {
+router.get("/", withAuth, async(req, res) => {
   try {
     //need to get post data to display cards of blog posts, with button to click them to view post and comments
+    const postData = await Post.findAll({
+      where: { user_id: req.session.user_id },
+      include: [{ model: User }],
+    });
+
+    const posts = postData.map((project) => project.get({ plain: true })); 
+
     res.render("dashboard", {
+      posts,
       logged_in: req.session.logged_in
     });
   } catch (err) {
