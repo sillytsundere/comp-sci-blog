@@ -1,8 +1,8 @@
 const router = require('express').Router();
+const sequelize = require("./config/connection");
 //const { User } = require('../models');
-//const sequelize = require("./config/connection");
 
-//routes used to render the page
+//the home-routes are for views to be rendered on the homepage
 
 //homepage display
 router.get('/', (req, res) => {
@@ -36,4 +36,10 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
   
+
+//route to view/render the blog posts go? //go in home routes where all rendering occurs
+router.get('')
+
+
+
   module.exports = router;

@@ -4,33 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
+  <title>Tech Talk</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
-  <header >
+  
+  <header>
+
     <h1>
-      ***Tech Blog Name***
+      Tech Talk
     </h1>
 
     <nav>
-      <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        {{#if loggedIn}}
+        <li>
+          <a href="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a href="/" id="logout">Logout</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
     </nav>
 
   </header>
 
-  <main >
+  <main>
     {{{ body }}}
   </main>
   
   <footer>
-      <p>Made by Paige</p>
+      <p>Made by <a href="https://github.com/sillytsundere">Paige</a></p>
   </footer>
 
   {{#if logged_in}}

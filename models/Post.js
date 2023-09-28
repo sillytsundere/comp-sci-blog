@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
-class Blog extends Model {}
+class Post extends Model {}
 
-Blog.init(
+Post.init(
   {
     //define columns
     id: {
@@ -41,4 +41,4 @@ Blog.init(
   }
 );
 
-module.exports = Blog;
+module.exports = Post;

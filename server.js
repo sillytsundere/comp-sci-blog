@@ -12,28 +12,28 @@ const helpers = require("./utils/helpers");
 const sequelize = require("./config/connection");
 
 //creates new sequelize store using express package
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 //express initialization
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //handlebars initialization
-const hbs = exphbs.create({helpers});
+const hbs = exphbs.create({ helpers });
 
 //session options
 const sess = {
   //secret protects the session
-  secret: "secret secret",
+  secret: "super secret secret",
   //cookie defines aspects of the session
   cookie: {
-    maxAge: 60 * 60 * 1000, //this should equal an hour
+    maxAge: 60 * 60 * 1000, //each session will last an hour
   },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 //session initialization
