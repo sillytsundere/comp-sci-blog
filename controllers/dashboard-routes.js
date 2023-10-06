@@ -81,5 +81,15 @@ router.get("/edit", withAuth, async (req, res) => {
 });
 
 //route to view page for making a new blog post
+router.get('/new', withAuth, async(req, res) => {
+  try {
+    res.render('new-post', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

@@ -3,6 +3,7 @@
 {{#each posts as |post|}}
         <section>
             <button>Edit Post</button>
+            <button>Delete Post</button>
             <header>
                 {{post.title}}
             </header>
@@ -11,3 +12,8 @@
             <p><a href="/post/{{post.id}}">View Comments</a></p>
         </section>
     {{/each}}
+    <section>
+        <button id="create-new">Create New Post</button>
+    </section>
+
+    <script src="./js/dashboard.js"></script>

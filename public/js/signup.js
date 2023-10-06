@@ -23,3 +23,4 @@ const signupFormHandler = async (event) => {
 document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
+    //does it just have to be the submit button? or does it just work?
