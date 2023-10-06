@@ -4,7 +4,7 @@ const loadNewPostForm = async () => {
         method: "GET",
     });
     if (response.ok) {
-        document.location.replace('/dashboard/new');
+        document.location.replace('/dashboard');
     } else {
         alert("Could not load page to create a new post.");
     }
