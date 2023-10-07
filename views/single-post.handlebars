@@ -11,3 +11,26 @@
     <p>{{comment.comment_text}}</p>
     {{/each}}
 </section>
+
+{{#if post.user_id = session.user_id}}
+<div>
+  <h2>Edit Post</h2>
+  <form id="edit-post-form">
+    <div>
+        <input type="hidden" name="postId" value="{{post.id}}"/>
+      <label for="title-editpost">Title</label>
+      <input type="text" id="title-editpost" value="{{post.title}}"/>
+    </div>
+    <div>
+      <label for="content-editpost">Post Contents</label>
+      <textarea type="text" id="content-editpost" name="postContent">{{post.body}}</textarea>
+    </div>
+    <div>
+      <button id="editBtn">Edit</button>
+      <button id="deleteBtn">Delete</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/edit.js"></script>
+{{/if}}

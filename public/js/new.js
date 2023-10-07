@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
     const content = document.querySelector('#content-newpost').value.trim();
 
     if (title && content) {
-        const response = await fetch('api/posts/new', {
+        const response = await fetch(`/api/posts`, {
             method: 'POST',
             body: JSON.stringify({ title, content }),
             headers: { 'Content-Type': 'application/json' }, //what is the header for? is this even correct?
@@ -19,4 +19,6 @@ const newFormHandler = async (event) => {
     }
 };
 
-document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
+document
+.querySelector('#new-post-form')
+.addEventListener('submit', newFormHandler);

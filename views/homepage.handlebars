@@ -14,7 +14,9 @@
 <p>Please log in or sign up to see more post details!</p>
     {{#each posts as |post|}}
         <section>
-            <header>{{post.title}}</header>
+            <header>
+                <a href="/post/{{post.id}}">{{post.title}}</a>
+            </header>
         </section>
     {{/each}}
 {{/if}}
