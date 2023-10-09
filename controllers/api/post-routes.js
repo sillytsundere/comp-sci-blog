@@ -5,7 +5,6 @@ const withAuth = require('../../utils/auth');
 
 //route to create new post
 router.post('/', withAuth, async(req, res) => {
-    console.log("new post before try");
     try {
         console.log("new post");
         const postData = await Post.create({
@@ -23,7 +22,7 @@ router.post('/', withAuth, async(req, res) => {
 });
 
 //route to edit a post
-router.put('/:id', withAuth, async(req, res) => {
+router.put('/edit/:id', withAuth, async(req, res) => {
     try {
         const [selectedPost] = await Post.update(
             req.body, {
@@ -46,18 +45,16 @@ router.put('/:id', withAuth, async(req, res) => {
 });
 
 //route to delete the post
-router.delete('/:id', withAuth, async(req, res) => {
+router.delete('/delete/:id', withAuth, async(req, res) => {
     try {
-        const [selectedPost] = await Post.destroy(
-            {
+        const selectedPost = await Post.destroy({
                 where: {
                     id: req.params.id,
                 },
             }
         );
-        if(selectedPost > 0) {
-            res.status(200);
-            alert("Successfully deleted post.");
+        if(selectedPost) {
+            res.redirect('/dashboard');
         } else {
             res.status(404);
             alert("Unable to delete post.");

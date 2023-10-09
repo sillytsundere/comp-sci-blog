@@ -5,36 +5,40 @@ const editFormHandler = async (event) => {
 
     const title = document.querySelector('#title-editpost').value.trim();
     const content = document.querySelector('#content-editpost').value.trim();
-
-    if (title && content) {
-        const response = await fetch(`/api/posts/${postId}`, {
-            method: 'PUT',
-            body: JSON.stringify({ title, content }),
-            headers: { 'Content-Type': 'application/json' }, //what is the header for? is this even correct?
-        });
-
-        if (response.ok) {
+    console.log('edit form handler after consts before update');
+    
+    try {
+        if (title && content) {
+            await fetch(`/api/posts/edit/${postId}`, {
+                method: 'PUT',
+                body: JSON.stringify({ title, content }),
+                headers: { 'Content-Type': 'application/json' }, //what is the header for? is this even correct?
+            });
+    
             document.location.replace('/dashboard');
-        } else {
-            alert("Could not edit post.");
-        }
+            console.log('success in edit form handler');
+        } 
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
     }
 };
 
 const deleteFormHandler = async (event) => {
-    await fetch(`/api/posts/${postId}`, {
-        method: 'DELETE',
-    })
-    if (response.ok) {
+    try {
+        await fetch(`/api/posts/delete/${postId}`, {
+            method: 'DELETE',
+        });
         document.location.replace('/dashboard');
-    } else {
-        alert("Could not delete post.");
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
     }
-}
+};
 
 document
 .querySelector('#editBtn')
-.addEventListener('submit', editFormHandler);
+.addEventListener('click', editFormHandler);
 
 document
 .querySelector('#deleteBtn')
