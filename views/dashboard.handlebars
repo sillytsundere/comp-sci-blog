@@ -1,14 +1,12 @@
-<p>THIS IS THE DASHBOARD HANDLEBARS PAGE BEING RENDERED</p>
-<h2>Your Posts</h2>
+<h2>Dashboard</h2>
+<h3>Your Posts</h3>
 {{#each posts as |post|}}
         <section>
-            <button id="editPost">Edit Post</button>
-            <header>
-                <a href="/post/{{post.id}}">{{post.title}}</a>
-            </header>
+            <p><a href="/dashboard/edit/{{post.id}}">Edit Post</a></p>
+            <header>{{post.title}}</header>
             <p>{{post.content}}</p>
             <p>Posted on {{format_date post.date_created}}</p>
-            <p><a href="/post/{{post.id}}">View Comments</a></p>
+            <p><a href="/dashboard/post/{{post.id}}">View Comments</a></p>
         </section>
     {{/each}}
     <section>

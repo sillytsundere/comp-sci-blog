@@ -35,10 +35,21 @@ router.get("/post/:id", withAuth, async (req, res) => {
       attributes: ["id", "title", "content", "date_created", "user_id"],
       include: [{ model: User }],
     });
-    const postData = userPost.map((project) => project.get({ plain: true }));
+    const post = userPost.get({ plain: true });
+    console.log(post);
 
-    res.render("post", {
-      postData,
+    const commentData = await Comment.findAll({
+      where: { post_id: req.params.id },
+      attributes: ["id", "comment_text", "date_created", "user_id", "post_id"],
+      include: [
+        { model: User, attributes: ["username"] },
+        ]
+    });
+    const comments = commentData.map((project) => project.get({ plain: true }));
+
+    res.render("single-post", {
+      post,
+      comments,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -48,13 +59,12 @@ router.get("/post/:id", withAuth, async (req, res) => {
 });
 
 //edit user's own posts route, so will need to display the single blog post they clicked on to edit
-router.get("/edit", withAuth, async (req, res) => {
+router.get("/edit/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findOne({
       where: { id: req.params.id },
-      attributes: ["id", "title", "content", "date_created"],
+      attributes: ["id", "title", "content", "date_created", "user_id"],
       include: [
-        { model: User, attributes: ["username"] },
         {
           model: Comment,
           attributes: [
@@ -68,12 +78,12 @@ router.get("/edit", withAuth, async (req, res) => {
         },
       ],
     });
-    const posts = postData.map((project) => project.get({ plain: true }));
-    console.log(posts);
+    const post = postData.map((project) => project.get({ plain: true }));
+    console.log(post);
     res.render("edit-post", {
-      posts,
+      post,
       logged_in: req.session.logged_in,
-    }); //add the post data
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -84,17 +94,6 @@ router.get("/edit", withAuth, async (req, res) => {
 router.get('/new', withAuth, async(req, res) => {
   try {
     res.render('new-post', {
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/edit', withAuth, async(req,res) => {
-  try{
-    res.render('edit-post', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {

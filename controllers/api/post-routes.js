@@ -22,7 +22,7 @@ router.post('/', withAuth, async(req, res) => {
     }
 });
 
-//route to edit a post?
+//route to edit a post
 router.put('/:id', withAuth, async(req, res) => {
     try {
         const [selectedPost] = await Post.update(
@@ -67,5 +67,8 @@ router.delete('/:id', withAuth, async(req, res) => {
         res.status(500).json(err);
     }
 });
+
+//route to add comment to a post
+
 
 module.exports = router;

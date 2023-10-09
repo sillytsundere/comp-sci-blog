@@ -63,7 +63,6 @@ router.get("/post/:id", withAuth, async (req, res) => {
         ]
     });
     const comments = commentData.map((project) => project.get({ plain: true }));
-    console.log(comments);
 
     res.render('single-post', {
       post,
