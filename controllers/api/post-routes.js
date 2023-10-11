@@ -6,7 +6,6 @@ const withAuth = require('../../utils/auth');
 //route to create new post
 router.post('/', withAuth, async(req, res) => {
     try {
-        console.log("new post");
         const postData = await Post.create({
             // title: req.body.title,
             // content: req.body.content,
@@ -47,18 +46,14 @@ router.put('/edit/:id', withAuth, async(req, res) => {
 //route to delete the post
 router.delete('/delete/:id', withAuth, async(req, res) => {
     try {
-        const selectedPost = await Post.destroy({
-                where: {
-                    id: req.params.id,
-                },
-            }
+        await Post.destroy({
+            where: {
+                id: req.params.id,
+            },
+          }
         );
-        if(selectedPost) {
-            res.redirect('/dashboard');
-        } else {
-            res.status(404);
-            alert("Unable to delete post.");
-        }
+        res.redirect('/dashboard');
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -66,6 +61,18 @@ router.delete('/delete/:id', withAuth, async(req, res) => {
 });
 
 //route to add comment to a post
+router.post('/comment', withAuth, async(req, res) => {
+    try {
+        await Comment.create({
+            ...req.body,
+            user_id: req.session.user_id,
+        });
+        res.status(200);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
 
 
 module.exports = router;

@@ -27,36 +27,36 @@ router.get("/", withAuth, async(req, res) => {
   }
 });
 
-//route for viewing the comments on user's own blog post
-router.get("/post/:id", withAuth, async (req, res) => {
-  try {
-    const userPost = await Post.findOne({
-      where: { id: req.params.id },
-      attributes: ["id", "title", "content", "date_created", "user_id"],
-      include: [{ model: User }],
-    });
-    const post = userPost.get({ plain: true });
-    console.log(post);
+// //route for viewing the comments on user's own blog post
+// router.get("/post/:id", withAuth, async (req, res) => {
+//   try {
+//     const userPost = await Post.findOne({
+//       where: { id: req.params.id },
+//       attributes: ["id", "title", "content", "date_created", "user_id"],
+//       include: [{ model: User }],
+//     });
+//     const post = userPost.get({ plain: true });
+//     console.log(post);
 
-    const commentData = await Comment.findAll({
-      where: { post_id: req.params.id },
-      attributes: ["id", "comment_text", "date_created", "user_id", "post_id"],
-      include: [
-        { model: User, attributes: ["username"] },
-        ]
-    });
-    const comments = commentData.map((project) => project.get({ plain: true }));
+//     const commentData = await Comment.findAll({
+//       where: { post_id: req.params.id },
+//       attributes: ["id", "comment_text", "date_created", "user_id", "post_id"],
+//       include: [
+//         { model: User, attributes: ["username"] },
+//         ]
+//     });
+//     const comments = commentData.map((project) => project.get({ plain: true }));
 
-    res.render("single-post", {
-      post,
-      comments,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     res.render("single-post", {
+//       post,
+//       comments,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 //edit user's own posts route, so will need to display the single blog post they clicked on to edit
 router.get("/edit/:id", withAuth, async (req, res) => {

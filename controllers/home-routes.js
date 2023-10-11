@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//signup route
+// render signup page route
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
@@ -33,7 +33,7 @@ router.get("/signup", (req, res) => {
   res.render("sign-up");
 });
 
-// Login route
+// render the login page route
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
@@ -42,8 +42,8 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-//route to view/render the blog posts go? //go in home routes where all rendering occurs
-router.get("/post/:id", withAuth, async (req, res) => {
+//route to view/render individual blog posts 
+router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findOne({
       where: { id: req.params.id },
