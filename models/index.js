@@ -28,12 +28,12 @@ Comment.belongsTo(User, {
 
 //relating posts to comments
 Post.hasMany(Comment, {
-    foreignKey: 'blog_id',
+    foreignKey: 'post_id',
     onDelete: 'CASCADE',
 });
 //relating comments to posts
 Comment.belongsTo(Post, {
-    foreignKey: 'blog_id',
+    foreignKey: 'post_id',
 });
 
 //export models

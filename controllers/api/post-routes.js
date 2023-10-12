@@ -67,7 +67,8 @@ router.post('/comment', withAuth, async(req, res) => {
             ...req.body,
             user_id: req.session.user_id,
         });
-        res.status(200);
+        console.log(req.body, 'req.body');
+        res.redirect(`/post/${req.body.post_id}`);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

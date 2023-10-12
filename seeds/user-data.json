@@ -1,30 +1,36 @@
 [
   {
+    "id": "1",
     "username": "Rachel",
     "email": "rach2323@hotmail.com",
     "password": "catlover123"
   },
   {
+    "id": "2",
     "username": "Sam",
     "email": "samueliscool@aol.com",
     "password": "robotsrock54"
   },
   {
+    "id": "3",
     "username": "Samara",
     "email": "sjoy@yahoo.com",
     "password": "diamond222"
   },
   {
+    "id": "4",
     "username": "Baxter",
     "email": "bmax@hotmail.com",
     "password": "tech666devil"
   },
   {
+    "id": "5",
     "username": "Alaina",
     "email": "amoore@gmail.com",
     "password": "welovetennis77"
   },
   {
+    "id": "6",
     "username": "Matt",
     "email": "mplanch@hotmail.com",
     "password": "thenorth456"
