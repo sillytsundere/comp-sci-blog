@@ -1,5 +1,5 @@
 const loadNewPostForm = async () => {
-    console.log("load new post form");
+
     const response = await fetch("/dashboard/new", {
         method: "GET",
     });

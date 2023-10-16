@@ -1,11 +1,12 @@
-<div class="card row justify-space-between-md m-3">
+<div class="d-flex justify-content-center">
+<div class="card row m-3 col-10">
   <h2 class="card-header">Write your blog post!</h2>
   <form class="form p-3" id="new-post-form">
-    <div>
+    <div class="mb-3">
       <label for="title-newpost" class="form-label">Title</label>
       <input class="form-control" type="text" id="title-newpost"/>
     </div>
-    <div>
+    <div class="mb-2">
       <label for="content-newpost" class="form-label">Post Contents</label>
       <textarea class="form-control" rows="5" type="text" id="content-newpost"></textarea>
     </div>
@@ -13,6 +14,7 @@
       <button class="btn btn-info m-2" type="submit">Create</button>
     </div>
   </form>
+</div>
 </div>
 
 <script src="/js/new.js"></script>

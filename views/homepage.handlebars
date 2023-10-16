@@ -2,23 +2,27 @@
 
 {{#if logged_in}}
     {{#each posts as |post|}}
-        <section class="card my-3 mx-5 border border-info-subtle rounded col-9 col-sm-10">
+    <div class="d-flex justify-content-center">
+        <section class="card my-3 mx-5 rounded col-9 col-sm-10">
             <header class="card-header">
                 <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="/post/{{post.id}}">{{post.title}}</a>
             </header>
             <div class="card-body">
-            <p>{{post.content}}</p>
             <p>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+            <p>{{post.content}}</p>
             </div>
         </section>
+    </div>
     {{/each}}
 {{else}}
 <p class="my-3 mx-5 text-center">Please log in or sign up to see more post details!</p>
     {{#each posts as |post|}}
-        <section class="card my-3 mx-5 border border-info-subtle rounded col-9 col-sm-10">
+    <div class="d-flex justify-content-center">
+        <section class="card my-2 mx-5 border border-info-subtle rounded col-9 col-sm-10">
             <header class="card-header">
                 <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="/post/{{post.id}}">{{post.title}}</a>
             </header>
         </section>
+    </div>    
     {{/each}}
 {{/if}}

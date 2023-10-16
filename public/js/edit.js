@@ -5,7 +5,6 @@ const editFormHandler = async (event) => {
 
     const title = document.querySelector('#title-editpost').value.trim();
     const content = document.querySelector('#content-editpost').value.trim();
-    console.log('edit form handler after consts before update');
     
     try {
         if (title && content) {
@@ -16,7 +15,6 @@ const editFormHandler = async (event) => {
             });
     
             document.location.replace('/dashboard');
-            console.log('success in edit form handler');
         } 
     } catch (err) {
         console.log(err);

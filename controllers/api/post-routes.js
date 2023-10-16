@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { Post, Comment } = require('../../models');
 const sequelize = require("../../config/connection");
 const withAuth = require('../../utils/auth');
 
@@ -31,11 +31,9 @@ router.put('/edit/:id', withAuth, async(req, res) => {
             }
         );
         if(selectedPost > 0) {
-            res.status(200);
-            alert("Successfully updated post.");
+            res.status(200).json("Successfully updated post.");
         } else {
-            res.status(404);
-            alert("Unable to update post.");
+            res.status(404).json("Unable to update post.");
         }
     } catch (err) {
         console.log(err);
