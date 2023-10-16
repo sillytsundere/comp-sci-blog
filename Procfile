@@ -1,0 +1,1 @@
+heroku run node ./seeds/seed.js
