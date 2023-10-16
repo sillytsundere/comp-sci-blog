@@ -1,21 +1,21 @@
-<div class="row justify-space-between-md">
+<div class="card row justify-space-between-md m-3">
 
   <div class="login-card">
-    <h2 class="page-title">Login</h2>
+    <h2 class="page-title text-center">Login</h2>
     <form class="form login-form">
       <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
+        <label for="email-login" class="form-label">Email:</label>
+        <input class="form-input form-control" type="text" id="email-login" />
       </div>
       <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <label for="password-login" class="form-label">Password:</label>
+        <input class="form-input form-control" type="password" id="password-login"/>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+      <div class="d-flex justify-content-center form-group">
+        <button class="btn btn-info m-2" type="submit">Login</button>
       </div>
     {{!-- add the sign-up-instead button here to direct to the signup handlebars? --}}
-      <p>Don't have an account? <a href="/signup">Sign Up!</a></p>
+      <p class="text-center">Don't have an account? <a href="/signup">Sign Up!</a></p>
     </form>
   </div>
 

@@ -1,15 +1,17 @@
-<h2>Dashboard</h2>
-<h3>Your Posts</h3>
+<h2 class="my-3 mx-5 text-center">Dashboard</h2>
+<h3 class="mx-5 my-3">Your Posts</h3>
 {{#each posts as |post|}}
-        <section>
-            <p><a href="/dashboard/edit/{{post.id}}">Edit Post</a></p>
-            <header>{{post.title}}</header>
+        <section class="card my-3 mx-5 border border-info-subtle rounded col-9 col-sm-10">
+            <p class="card-header"><a href="/dashboard/edit/{{post.id}}">Edit Post</a></p>
+            <div class="card-body">
+            <h5>{{post.title}}</h5>
             <p>{{post.content}}</p>
             <p>Posted on {{format_date post.date_created}}</p>
+            </div>
         </section>
     {{/each}}
-    <section>
-        <button id="create-new">Create New Post</button>
+    <section class="d-flex justify-content-center">
+        <button class="btn btn-info m-3" id="create-new">Create New Post</button>
     </section>
 
     <script src="/js/dashboard.js"></script>

@@ -1,29 +1,35 @@
-<header>{{post.title}}</header>
+<h2 class="my-3 mx-5 text-center">{{post.title}}</h2>
 <input type="hidden" name="postId" value="{{post.id}}"/>
 
-<section>
+<section class="mx-5 my-3">
     <p>{{post.content}}</p>
-    <p>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+    <p class="text-center">Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
 </section>
 <section>
     {{#if logged_in}}
-    <div>
+    <div class="m-5">
         <h3>Add Comment</h3>
         <form>
             <div>
-                <label for="comment">Comment</label>
-                <input type="text" id="comment"/>
+                <label for="comment" class="form-label">Comment</label>
+                <input class="form-control" type="text" id="comment"/>
             </div>
-            <button id="commentBtn" type="submit">Submit</button>
+            <div class="d-flex justify-content-center form-group">
+            <button class="btn btn-info m-2" id="commentBtn" type="submit">Submit</button>
+            </div>
         </form>
     </div>
     {{/if}}
 
-    <header>Comments</header>
+    <div class="card m-5">
+    <header class="card-header">Comments</header>
     {{#each comments as |comment|}}
+    <div class="list-group-item">
     <p>{{comment.user.username}} on {{format_date comment.date_created}}</p>
     <p>{{comment.comment_text}}</p>
+    </div>
     {{/each}}
+    </div>
 </section>
 
 {{#if logged_in}}

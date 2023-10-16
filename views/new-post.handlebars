@@ -1,16 +1,16 @@
-<div>
-  <h2>Write your blog post!</h2>
-  <form id="new-post-form">
+<div class="card row justify-space-between-md m-3">
+  <h2 class="card-header">Write your blog post!</h2>
+  <form class="form p-3" id="new-post-form">
     <div>
-      <label for="title-newpost">Title</label>
-      <input type="text" id="title-newpost"/>
+      <label for="title-newpost" class="form-label">Title</label>
+      <input class="form-control" type="text" id="title-newpost"/>
     </div>
     <div>
-      <label for="content-newpost">Post Contents</label>
-      <input type="text" id="content-newpost"/>
+      <label for="content-newpost" class="form-label">Post Contents</label>
+      <textarea class="form-control" rows="5" type="text" id="content-newpost"></textarea>
     </div>
-    <div>
-      <button type="submit">Create</button>
+    <div class="d-flex justify-content-center form-group">
+      <button class="btn btn-info m-2" type="submit">Create</button>
     </div>
   </form>
 </div>
