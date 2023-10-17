@@ -11,7 +11,7 @@
   },
   {
     "title": "Where do all these routes go? Routers and how they work",
-    "content": "Stuff about Routers",
+    "content": "The Express router function can help your web application handle different requests. These routers can direct your database in CRUD actions; create, read, update and delete. In an MVC modeled app the routes are the controllers which handle requests between the models and the views. The routers and route files act as little conductors directing requests to the appropriate end points so they can be fulfilled. These routes are some of what can make up a RESTful web application.",
     "user_id": "4"
   },
   {
