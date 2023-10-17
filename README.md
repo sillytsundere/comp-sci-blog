@@ -2,7 +2,7 @@
 
 ## Descripton
 
-
+This web application is a CMS-style blog that utilizes the Model-View-Controller software design pattern. The blog allows users to create an account, log in, share posts and view and comment on other user's posts. This application served to familiarize me with MVC design as well as the Handlebars.js template system to generate the the webpage templates. This web application also employs the Express.js Node framework and uses a MySQL database powered by Sequelize and Javascript.
 
 ## Table of Contents
 
@@ -30,8 +30,23 @@ After closing the MySQL shell, navigate to the main repository in the command li
 
 ## Usage
 
-The deployed site can be viewed [here]().
+The deployed site can be viewed [here](https://comp-tech-talk-1c5888367981.herokuapp.com/). The homepage displays previously created blog posts and users can click on the title of the blog post to view the post content and the creator of the post.
 
+![homepage view when not logged in](dev-assets/pre-login-homepage.png)
+
+![view of a single post when not logged in](dev-assets/pre-login-post-view.png)
+
+Once a user creates an account and/or logs in they can view the usernames of the creator of each post and after clicking on a post have the option to leave a comment.
+
+![logged in homepage view](dev-assets/logged-in-homepage-view.png)
+
+![logged in single post view](dev-assets/logged-in-post-view.png)
+
+A logged in user can click the Dashboard button to view their own blog posts. Each post has a link where the user can edit or delete their own posts. On the user's profile is also a "Create New Post" button the use can click to write a new blog post.
+
+![view of user's dahsboard](dev-assets/dashboard-view.png)
+
+![users view of page to edit or delete posts](dev-assets/edit-post-view.png)
 
 ## Credits
 
@@ -60,9 +75,3 @@ MIT License
 ![Static Badge](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 
 ![Static Badge](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
-
-## Future Developments
-
-These are a few of the application features that we would like to add in the future:
-
-- 
